@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ShoppingCart.Models
 {
-    public class ProductModels
+    public class Product
     {
         public int Id
         {

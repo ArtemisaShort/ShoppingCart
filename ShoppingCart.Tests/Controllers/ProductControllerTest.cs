@@ -22,7 +22,7 @@ namespace ShoppingCart.Tests.Controllers
             ProductController controller = new ProductController();
 
             // Act
-            List<ProductModels> result = controller.ListProducts();
+            List<Product> result = controller.ListProducts();
 
             // Assert
             Assert.IsNotNull(result);
@@ -37,47 +37,13 @@ namespace ShoppingCart.Tests.Controllers
             ProductController controller = new ProductController();
 
             // Act
-            ProductModels result = controller.GetProduct(2);
+            Product result = controller.GetProduct(2);
 
             // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual("Trousers", result.Name);
         }
 
-        [TestMethod]
-        public void Post()
-        {
-            // Arrange
-            ValuesController controller = new ValuesController();
-
-            // Act
-            controller.Post("value");
-
-            // Assert
-        }
-
-        [TestMethod]
-        public void Put()
-        {
-            // Arrange
-            ValuesController controller = new ValuesController();
-
-            // Act
-            controller.Put(5, "value");
-
-            // Assert
-        }
-
-        [TestMethod]
-        public void Delete()
-        {
-            // Arrange
-            ValuesController controller = new ValuesController();
-
-            // Act
-            controller.Delete(5);
-
-            // Assert
-        }
+        
     }
 }

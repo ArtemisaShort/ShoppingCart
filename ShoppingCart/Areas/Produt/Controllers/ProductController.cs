@@ -11,13 +11,16 @@ namespace ShoppingCart.Areas.Produt.Controllers
 {
     public class ProductController : ApiController
     {
-        public ProductModels GetProduct(int productId)
+        [HttpGet]
+        public Product GetProduct(int productId)
         {
-            ProductModels product = ProductRepository.getProductRepository().GetProdutcById(productId);
+            Product product = ProductRepository.getProductRepository().GetProdutcById(productId);
 
             return product;
         }
-        public List<ProductModels> ListProducts()
+
+        [HttpGet]
+        public List<Product> ListProducts()
         {
             var products= ProductRepository.getProductRepository().GetProduts();
 

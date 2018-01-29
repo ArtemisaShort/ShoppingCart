@@ -8,20 +8,20 @@ namespace ShoppingCart.Repositories
     {
         private static ProductRepository _instance = new ProductRepository();
 
-        private List<ProductModels> _productList = new List<ProductModels>(); //dummy for database
+        private List<Product> _productList = new List<Product>(); //dummy for database
         private ProductRepository()
         {
             //inicialize the product list with some dummy products
-            _productList.Add(new ProductModels()
+            _productList.Add(new Product()
             {
                 Id = 1,
                 Name = "T-Shirt",
-                Price = 12.0,
+                Price = 15.0,
                 Description = "Dummy T-shirt Product"
 
             });
 
-            _productList.Add(new ProductModels()
+            _productList.Add(new Product()
             {
                 Id = 2,
                 Name = "Trousers",
@@ -29,7 +29,7 @@ namespace ShoppingCart.Repositories
                 Description = "Dummy Trousers Product"
 
             });
-            _productList.Add(new ProductModels()
+            _productList.Add(new Product()
             {
                 Id = 3,
                 Name = "Cap",
@@ -37,7 +37,7 @@ namespace ShoppingCart.Repositories
                 Description = "Dummy Cap Product"
 
             });
-            _productList.Add(new ProductModels()
+            _productList.Add(new Product()
             {
                 Id = 4,
                 Name = "Boots",
@@ -52,10 +52,10 @@ namespace ShoppingCart.Repositories
             return _instance;
         }
 
-        public List<ProductModels> GetProduts(){
+        public List<Product> GetProduts(){
             return _productList;
         }
-        public ProductModels GetProdutcById(int productId){
+        public Product GetProdutcById(int productId){
             return _productList.Find((prod => prod.Id == productId));
         }
 
